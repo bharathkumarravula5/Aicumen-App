@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AicumenApp.View.ShowProfilesPage"
+             Title="Profiles Page">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <ListView ItemsSource="{Binding ShowProfiles}" Margin="5,0,5,0" HasUnevenRows="True" 
+                      SelectedItem="{Binding SelectProfile,Mode=TwoWay}" CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame HasShadow="True" CornerRadius="5" Margin="5,5,5,5" BackgroundColor="White" IsClippedToBounds="True">
+                                    <StackLayout Orientation="Vertical" Margin="20,10,20,10">
+                                        <Label Text="{Binding fb_name}" FontSize="Default"/>
+                                        <Label Text="{Binding fb_id}" FontSize="Default"/>
+                                        <Label Text="{Binding fb_gender}" FontSize="Default"/>
+                                        <Label Text="{Binding fb_email}" FontSize="Default"/>
+                                        <Label Text="{Binding stq_score}" FontSize="Default"/>
+                                        <Label Text="{Binding qrm_wallet}" FontSize="Default"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
